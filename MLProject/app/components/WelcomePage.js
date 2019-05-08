@@ -3,7 +3,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import HttpUtil from '../net/HttpUtil';
-import { baseURL } from '../net/API';
+
 
 
 /**
@@ -29,7 +29,7 @@ export default class  WelcomePage extends React.Component {
         let params = new FormData()
         params.append("name", "");
 
-        HttpUtil.get(baseURL, params, null).then((result) => {
+        HttpUtil.get(API_baseURL, params, null).then((result) => {
             Console.log(result);
         }).catch((err) => {
             Console.log(err);

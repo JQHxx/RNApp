@@ -1,5 +1,8 @@
 # RNApp
 
+#### 第三方框架
+- 底部导航：react-native-tab-navigator
+
 #### 一、mac react-native环境搭建
 
 工具：vscode
