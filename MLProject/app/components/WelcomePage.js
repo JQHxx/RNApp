@@ -2,12 +2,18 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import HttpUtil from '../net/HttpUtil';
+import { baseURL } from '../net/API';
 
 
 /**
  * 欢迎页
  */
 export default class  WelcomePage extends React.Component {
+
+    componentDidMount() {
+        _testNetwork();
+    }
 
     render() {
         return (
@@ -17,6 +23,17 @@ export default class  WelcomePage extends React.Component {
             <Text style={styles.instructions}>{instructions}</Text>
           </View>
         );
+      }
+
+      _testNetwork() {
+        let params = new FormData()
+        params.append("name", "");
+
+        HttpUtil.get(baseURL, params, null).then((result) => {
+            Console.log(result);
+        }).catch((err) => {
+            Console.log(err);
+        });
       }
 }
 
