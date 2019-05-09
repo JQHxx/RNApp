@@ -31,6 +31,18 @@
 #### 第三方框架
 - 图片选择：react-native-image-picker、react-native-image-crop-picker
 - tab切换：react-native-scrollable-tab-view
+-  webView: react-native-htmlview
+- 加密库：crypto-js
+- 下拉放大并回弹：react-native-parallax-scroll-view
+- 毛玻璃：https://github.com/react-native-fellowship/react-native-blur
+- 模态弹窗：https://github.com/maxs15/react-native-modalbox
+- 轮播图：https://github.com/leecade/react-native-swiper 、https://github.com/appintheair/react-native-looped-carousel
+- 图片加载进度条：https://github.com/oblador/react-native-image-progress
+- 图片选择：https://github.com/marcshilling/react-native-image-picker、https://github.com/ivpusic/react-native-image-crop-picker
+- 下拉选择：https://github.com/alinz/react-native-dropdown
+- 获取设备信息：https://github.com/rebeccahughes/react-native-device-info
+- 通讯录：https://github.com/rt2zz/react-native-contacts
+- 国际化：https://github.com/joshswan/react-native-globalize
 
 #### 调试
 - 真机：react-native run-ios --device  手机的名称
