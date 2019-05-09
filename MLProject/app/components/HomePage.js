@@ -1,7 +1,13 @@
 
 import React, {Component} from 'react'
-import {Text} from 'react-native'
+import {
+    Text,
+    View,
+    StatusBar
+} from 'react-native'
 
+import styles from '../styles'
+import * as Constant from '../styles/constant'
 
 import homeActions from '../store/actions/home'
 import {connect} from 'react-redux'
@@ -29,7 +35,12 @@ class HomePage extends Component {
         let {homeState} = this.props;
         let dataSource = homeState.homeModel;
         return (
-            <Text>{JSON.stringify(dataSource)}</Text>
+            <View style={styles.mainBox}>
+                <StatusBar hidden={false} backgroundColor={Constant.primaryColor} translucent
+                           barStyle={'light-content'}/>
+                <Text>{JSON.stringify(dataSource)}</Text>
+            </View>
+            
         );
     }
 
