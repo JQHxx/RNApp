@@ -7,14 +7,19 @@ import {LOGIN} from '../type'
  */
 const doLogin = (params, callback) => async (dispatch, getState) => {
 
-    HttpUtil.post(API.USER_LOGIN, params, null).then((res) => {
+    const headers =  {
+        'Accept': 'application/json', 
+        'Content-Type': 'application/json'
+    };
+
+    HttpUtil.post(API.USER_LOGIN, params, headers).then((res) => {
         
         if (res && res.result) {
             dispatch({
                 type: LOGIN.IN,
                 res: res
             });
-            callback && callback(res.result);
+            callback && callback(res);
             return;
         }
         callback && callback(null);
@@ -29,7 +34,12 @@ const doLogin = (params, callback) => async (dispatch, getState) => {
  */
 const loginOut = () => async (dispatch, getState) => {
 
-    HttpUtil.post(API.USER_LOGOUT, null, null).then((res) => {
+    const headers =  {
+        'Accept': 'application/json', 
+        'Content-Type': 'application/json'
+    };
+
+    HttpUtil.post(API.USER_LOGOUT, null, headers).then((res) => {
         
         dispatch({
             type: LOGIN.CLEAR

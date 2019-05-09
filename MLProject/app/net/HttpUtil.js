@@ -38,7 +38,7 @@ HttpUtil.get = function (url, params, headers) {
                 }
             })
             .then((response) => {
-                reslove(response);
+                resolve(response);
             })
             .catch((err) => {
                 reject({status: -1});

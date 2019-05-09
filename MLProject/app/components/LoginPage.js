@@ -42,7 +42,8 @@ class LoginPage extends Component {
         this.state = {
             saveUserName: '',
             savePassword: '',
-            secureTextEntry: true
+            secureTextEntry: true,
+            json: ''
         }
     }
 
@@ -54,7 +55,9 @@ class LoginPage extends Component {
                 <TouchableHighlight 
                 onPress={this.doLogin}>
                     <Text style={styles.welcome}>LoginPage</Text>
+                    
                 </TouchableHighlight>
+                <Text style={styles.welcome}>{this.state.json}</Text>
                 
             </View>
     
@@ -93,15 +96,24 @@ class LoginPage extends Component {
         // 缩下键盘
         Keyboard.dismiss();
 
-        const params = new FormData();
+        let params = new FormData();
         params.append('account', this.params.userName);
         params.append('password', this.params.password);
 
         login.doLogin(params, (res) => {
+            // alert(JSON.stringify(res));
             if (!res) {
-                Actions.reset("root");
+                this.setState({
+                    json: '错误'
+                })
+                // Actions.reset("root");
             } else {
-                Actions.reset("root");
+   
+                this.setState({
+                    json: JSON.stringify(res)
+                })
+                alert(res.code)
+                // Actions.reset("root");
             }
         })
 
