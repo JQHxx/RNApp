@@ -112,8 +112,8 @@ class LoginPage extends Component {
                 this.setState({
                     json: JSON.stringify(res)
                 })
-                alert(res.code)
-                // Actions.reset("root");
+                // alert(res.code)
+                Actions.reset("root");
             }
         })
 

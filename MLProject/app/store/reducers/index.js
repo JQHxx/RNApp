@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux';
-import login from "./login"
+import login from "./login";
+import home from "./home";
 
 
 
 export default combineReducers({
-    login: login
+    login: login,
+    home: home
 });
