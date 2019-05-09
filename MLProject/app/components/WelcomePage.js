@@ -1,9 +1,10 @@
 
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, TouchableHighlight} from 'react-native';
+import {Actions} from 'react-native-router-flux';
 import HttpUtil from '../net/HttpUtil';
-
+import * as API from '../net/API'
 
 
 /**
@@ -12,15 +13,18 @@ import HttpUtil from '../net/HttpUtil';
 export default class  WelcomePage extends React.Component {
 
     componentDidMount() {
-        _testNetwork();
+        this._testNetwork();
     }
 
     render() {
         return (
           <View style={styles.container}>
-            <Text style={styles.welcome}>Welcome to React Native!</Text>
-            <Text style={styles.instructions}>To get started, edit App.js</Text>
-            <Text style={styles.instructions}>{instructions}</Text>
+            <TouchableHighlight onPress={() => {
+              Actions.reset("root");
+            }}>
+              <Text style={styles.welcome}>Welcome!</Text>
+            </TouchableHighlight>
+            
           </View>
         );
       }
@@ -29,7 +33,7 @@ export default class  WelcomePage extends React.Component {
         let params = new FormData()
         params.append("name", "");
 
-        HttpUtil.get(API_baseURL, params, null).then((result) => {
+        HttpUtil.get(API.BASE_URL, params, null).then((result) => {
             Console.log(result);
         }).catch((err) => {
             Console.log(err);

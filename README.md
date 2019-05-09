@@ -1,10 +1,40 @@
 # RNApp
 
-#### 第三方框架
+#### 打包
+- iOS
+```
+第一步： package.json 添加bundle-ios
+"scripts": {
+"bundle-ios":"node node_modules/react-native/local-cli/cli.js bundle --entry-file index.js --platform ios --dev false --bundle-output ./ios/bundle/index.ios.jsbundle --assets-dest ./ios/bundle"
+}
+
+第二步： 在ios 目录下创建文件夹 *bundle*
+
+第三步：npm run bundle-ios 即可打包
+
+第四步： 将 bundle 目录下包拖工程即可
+
+```
+
+#### 参考项目
+- GitHubPopular： https://github.com/crazycodeboy/GitHubPopular
+- GSYGithubAPP：https://github.com/CarGuo/GSYGithubAPP
+
+#### 主要模块
 - 底部导航：react-native-tab-navigator
 - 路由：react-native-router-flux
 - 数据库：react-native-sqlite-storage  、react-native-storage
-- 单向数据流：redux
+- 单向数据流：redux、redux-thunk、react-redux
+- CodePush
+- 导航：react-navigation 需要依赖 react-native-gesture-handler
+
+#### 第三方框架
+- 图片选择：react-native-image-picker、react-native-image-crop-picker
+- tab切换：react-native-scrollable-tab-view
+
+#### 调试
+- 真机：react-native run-ios --device  手机的名称
+
 
 #### 一、mac react-native环境搭建
 
@@ -141,4 +171,4 @@ HttpUtil.post(url,formData,headers).then((json) => {
 */
 ```
 
-
+#### 三、路由（react-native-router-flux）

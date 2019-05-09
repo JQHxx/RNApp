@@ -3,7 +3,5 @@
  * API 接口
  */
 
- export default class API {
-    static baseURL = "https://www.baidu.com";
- }
-
+ // 基本地址
+ export const BASE_URL = "https://www.baidu.com";
