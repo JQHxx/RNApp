@@ -13,14 +13,14 @@ import * as API from '../net/API'
 export default class  WelcomePage extends React.Component {
 
     componentDidMount() {
-        this._testNetwork();
+        // this._testNetwork();
     }
 
     render() {
         return (
           <View style={styles.container}>
             <TouchableHighlight onPress={() => {
-              Actions.reset("root");
+              Actions.reset("LoginPage");
             }}>
               <Text style={styles.welcome}>Welcome!</Text>
             </TouchableHighlight>
@@ -52,11 +52,6 @@ const styles = StyleSheet.create({
       fontSize: 20,
       textAlign: 'center',
       margin: 10,
-    },
-    instructions: {
-      textAlign: 'center',
-      color: '#333333',
-      marginBottom: 5,
     },
   });
   

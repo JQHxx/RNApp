@@ -9,6 +9,7 @@ import * as Constant from './styles/constant'
 
 import WelcomePage from './components/WelcomePage';
 import HomePage from './components/HomePage';
+import LoginPage from './components/LoginPage'
 
 /**
  * 全局路由
@@ -26,6 +27,8 @@ import HomePage from './components/HomePage';
                 <Scene key="main">
                     <Scene key="WelcomePage" component={WelcomePage} hideNavBar hideTabBar hide/>
                 </Scene>
+
+                <Scene key="LoginPage" component={LoginPage} showLabel={false} hideTabBar/>
 
                 <Scene key="root"
                        navigationBarStyle={styles.navigationBar}
