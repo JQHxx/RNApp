@@ -30,3 +30,19 @@ export const TextColorMiWhtte = miWhite;
 
 export const tabSelectedColor = primaryColor;
 export const tabUnSelectColor = '#a6aaaf';
+
+/****************大小****************/
+// navbar 高度
+export const iosnavHeaderHeight = 44;
+export const andrnavHeaderHeight = 50;
+
+export const largetTextSize = 30;
+export const bigTextSize = 23;
+export const normalTextSize = 18;
+export const middleTextWhite = 16;
+export const smallTextSize = 14;
+export const minTextSize = 12;
+
+// tabBar 高度
+export const tabBarHeight = 50;
+export const tabIconSize = 20;

@@ -111,7 +111,7 @@ class LoginPage extends Component {
                     json: '错误'
                 })
                 Toast("错误");
-                // Actions.reset("root");
+                Actions.reset("root");
             } else {
    
                 this.setState({

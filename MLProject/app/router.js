@@ -2,11 +2,15 @@ import React, {Component} from 'react';
 import {
     Scene,
     Router,
-    Lightbox, Drawer
+    Lightbox, 
+    Drawer,
+    Tabs
 } from 'react-native-router-flux';
 
 import styles from './styles';
 import * as Constant from './styles/constant';
+
+import TabIcon from './components/widget/TabIcon'
 
 import WelcomePage from './components/WelcomePage';
 import HomePage from './components/HomePage';
@@ -51,9 +55,28 @@ import ServiceCenterPage from './components/ServiceCenterPage';
                                justifyContent: 'center',
                                backgroundColor: Constant.tabBackgroundColor
                            }}>
-                        <Scene key="MessageListPage" component={MessageListPage} title={'消息中心'}/>
-                        <Scene key="HomePage" component={HomePage} title={'首页'} initial={true}/>
-                        <Scene key="MinePage" component={MinePage} />
+                        <Scene 
+                            key="MessageListPage" 
+                            component={MessageListPage} 
+                            icon={TabIcon}
+                            title={'tabDynamic'}
+                            tabIconName={'tabDynamic'}
+                        />
+                        <Scene 
+                            key="HomePage" 
+                            component={HomePage} 
+                            icon={TabIcon}
+                            title={'tabDynamic'}
+                            tabIconName={'tabDynamic'} 
+                            initial={true}
+                        />
+                        <Scene 
+                            key="MinePage" 
+                            component={MinePage} 
+                            icon={TabIcon}
+                            title={'tabDynamic'}
+                            tabIconName={'tabDynamic'}
+                        />
                     </Scene>
 
                 </Scene>
