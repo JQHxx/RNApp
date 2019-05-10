@@ -44,5 +44,5 @@ export const smallTextSize = 14;
 export const minTextSize = 12;
 
 // tabBar 高度
-export const tabBarHeight = 50;
+export const tabBarHeight = 49;
 export const tabIconSize = 20;

@@ -13,8 +13,6 @@ import {
 
 import * as Constant from '../../styles/constant'
 import styles from '../../styles'
-// import Icon from 'react-native-vector-icons/Feather'
-
 
 const config = {
     ["tabRecommended"]: 'activity',
@@ -40,16 +38,30 @@ class TabIcon extends Component {
 
     render() {
 
-        // let iconPath = config[this.props.tabIconName];
-
+        // this.props.focused 区分是否是选中状态
         let color = this.props.focused ? Constant.tabSelectedColor : Constant.tabUnSelectColor;
 
-        return (
-            <View style={styles.centered}>
-                {/* <Icon name={iconPath} size={Constant.tabIconSize} color={color}/> */}
-                <Text style={[{color: color}, {fontSize: Constant.smallTextSize}]}>{this.props.title}</Text>
-            </View>
-        );
+        if (this.props.focused) {
+            return (
+                <View style={styles.centered}>
+                    <Image 
+                        source={require('../../imgs/default_img.png')}                            
+                        resizeMode={"contain"}
+                        style={{width: Constant.tabIconSize, height: Constant.tabIconSize}}/>
+                    <Text style={[{color: color}, {fontSize: Constant.smallTextSize}, {marginTop: 5}]}>{this.props.title}</Text>
+                </View>
+            );
+        } else {
+            return (
+                <View style={styles.centered}>
+                    <Image 
+                        source={require('../../imgs/default_img.png')}                            
+                        resizeMode={"contain"}
+                        style={{width: Constant.tabIconSize, height: Constant.tabIconSize}}/>
+                    <Text style={[{color: color}, {fontSize: Constant.smallTextSize}, {marginTop: 5}]}>{this.props.title}</Text>
+                </View>
+            );
+        }
     }
 }
 

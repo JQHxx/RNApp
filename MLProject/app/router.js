@@ -49,6 +49,7 @@ import ServiceCenterPage from './components/ServiceCenterPage';
                            showLabel={false}
                            tabBarPosition={"bottom"}
                            title={'appName'}
+                           hideNavBar
                            tabBarStyle={{
                                height: Constant.tabBarHeight,
                                alignItems: 'center',
@@ -59,14 +60,14 @@ import ServiceCenterPage from './components/ServiceCenterPage';
                             key="MessageListPage" 
                             component={MessageListPage} 
                             icon={TabIcon}
-                            title={'tabDynamic'}
+                            title={'消息'}
                             tabIconName={'tabDynamic'}
                         />
                         <Scene 
                             key="HomePage" 
                             component={HomePage} 
                             icon={TabIcon}
-                            title={'tabDynamic'}
+                            title={'首页'}
                             tabIconName={'tabDynamic'} 
                             initial={true}
                         />
@@ -74,7 +75,7 @@ import ServiceCenterPage from './components/ServiceCenterPage';
                             key="MinePage" 
                             component={MinePage} 
                             icon={TabIcon}
-                            title={'tabDynamic'}
+                            title={'我的'}
                             tabIconName={'tabDynamic'}
                         />
                     </Scene>
