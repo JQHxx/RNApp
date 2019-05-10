@@ -3,11 +3,15 @@ import {
     Text,
     View,
     StatusBar,
-    SafeAreaView
+    SafeAreaView,
+    ScrollView
 } from 'react-native'
 
 import styles from '../styles';
 import * as Constant from '../styles/constant';
+
+import MineHeaderView from './widget/MineHeaderView';
+import MineItemCell from './widget/MineItemCell';
 
 /**
  *  电商服务中心
@@ -19,8 +23,11 @@ export default class MinePage extends Component {
             <View style={styles.mainBox}> 
                 <StatusBar hidden={false} backgroundColor={Constant.primaryColor} translucent
                             barStyle={'light-content'}/>
-                <SafeAreaView >
-                    <Text>我的</Text>
+                <SafeAreaView style={{flex: 1}}>
+                    <ScrollView >
+                        <MineHeaderView/>
+                        <MineItemCell name={'功能'}/>
+                    </ScrollView>
                 </SafeAreaView>
             </View>
         );
