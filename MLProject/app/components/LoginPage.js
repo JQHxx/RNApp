@@ -5,7 +5,8 @@ import {
     Keyboard,
     TouchableHighlight,
     StatusBar,
-    StyleSheet
+    StyleSheet,
+    SafeAreaView
 } from 'react-native';
 
 import * as Constant from '../styles/constant';
@@ -15,6 +16,9 @@ import {Actions} from 'react-native-router-flux';
 import loginActions from '../store/actions/login'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
+
+// 吐丝
+import Toast from './common/ToastProxy'
 
 /**
  * 登录
@@ -51,16 +55,16 @@ class LoginPage extends Component {
          return (
             <View style={styles.container}>
                 <StatusBar hidden={false} backgroundColor={Constant.primaryColor} translucent
-                           barStyle={'light-content'}/>
-                <TouchableHighlight 
-                onPress={this.doLogin}>
-                    <Text style={styles.welcome}>LoginPage</Text>
-                    
-                </TouchableHighlight>
-                <Text style={styles.welcome}>{this.state.json}</Text>
-                
+                            barStyle={'light-content'}/>
+                <SafeAreaView >
+                    <TouchableHighlight 
+                    onPress={this.doLogin}>
+                        <Text style={styles.welcome}>LoginPage</Text>
+                    </TouchableHighlight>
+                    <Text style={styles.welcome}>{this.state.json}</Text>
+                </SafeAreaView>
             </View>
-    
+
          );
      }
 
@@ -82,7 +86,7 @@ class LoginPage extends Component {
       * 登录
       */
      doLogin () {
-        let {login} = this.props;
+        let {loginAction} = this.props;
         if (!this.params.userName || this.params.userName.length === 0) {
             return
         }
@@ -100,12 +104,13 @@ class LoginPage extends Component {
         params.append('account', this.params.userName);
         params.append('password', this.params.password);
 
-        login.doLogin(params, (res) => {
+        loginAction.doLogin(params, (res) => {
             // alert(JSON.stringify(res));
             if (!res) {
                 this.setState({
                     json: '错误'
                 })
+                Toast("错误");
                 // Actions.reset("root");
             } else {
    
@@ -136,6 +141,6 @@ class LoginPage extends Component {
 
 
  export default connect(state => ({state}), dispatch => ({
-    login: bindActionCreators(loginActions, dispatch)
+    loginAction: bindActionCreators(loginActions, dispatch)
 })
 )(LoginPage)

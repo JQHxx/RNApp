@@ -18,11 +18,14 @@ export default class App extends Component<{}> {
     super();
     this.state = {
         store: store,
-        show: false
+        show: true
     };
   }
 
   render() {
+    if (!this.state.show) {
+      return <View/>
+    }
     return (
       <Provider store={this.state.store}>
         {getRouter()}

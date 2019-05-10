@@ -9,3 +9,8 @@ export const LOGIN = {
 export const HOME = {
     LIST: 'HOME.LIST'
 }
+
+// 电商服务中心
+export const SERVICECENTER = {
+    LIST: 'SERVICECENTER.LIST'
+}

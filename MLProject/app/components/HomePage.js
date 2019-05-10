@@ -3,7 +3,8 @@ import React, {Component} from 'react'
 import {
     Text,
     View,
-    StatusBar
+    StatusBar,
+    SafeAreaView
 } from 'react-native'
 
 import styles from '../styles'
@@ -35,19 +36,20 @@ class HomePage extends Component {
         let {homeState} = this.props;
         let dataSource = homeState.homeModel;
         return (
-            <View style={styles.mainBox}>
+            <View style={styles.mainBox}> 
                 <StatusBar hidden={false} backgroundColor={Constant.primaryColor} translucent
-                           barStyle={'light-content'}/>
-                <Text>{JSON.stringify(dataSource)}</Text>
+                            barStyle={'light-content'}/>
+                <SafeAreaView >
+                    <Text>{JSON.stringify(dataSource)}</Text>
+                </SafeAreaView>
             </View>
-            
         );
     }
 
     loadListData() {
-        let {home} = this.props;
+        let {homeAction} = this.props;
         let params = new FormData();
-        home.homeList(params);
+        homeAction.homeList(params);
     }
 
 
@@ -56,6 +58,6 @@ class HomePage extends Component {
 export default connect(state => ({
     homeState: state.home
 }), dispatch => ({
-    home: bindActionCreators(homeActions, dispatch)
+    homeAction: bindActionCreators(homeActions, dispatch)
 })
 )(HomePage)
