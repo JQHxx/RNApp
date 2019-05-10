@@ -3,14 +3,21 @@ import {
     View,
     StyleSheet,
     Image,
-    Text
+    Text,
+    TouchableOpacity
 } from 'react-native'
 
 import PropTypes from 'prop-types';
 
+
+const defaultProps = {
+    name: ''
+}
+
 const propTypes = {
     name: PropTypes.string,
     iconName: PropTypes.string,
+    onClickFun: PropTypes.func
 };
 
 export default class MineItemCell extends Component {
@@ -20,21 +27,28 @@ export default class MineItemCell extends Component {
     }
 
     render() {
+
+        let {onClickFun, name} = this.props;
+
         return (
             <View style={styles.container}>
-                <View style={styles.content}>
+                <TouchableOpacity
+                onPress={() => {
+                    onClickFun && onClickFun(name)
+                }}
+                style={styles.content}>
                     <View style={styles.leftContent}>
                         <Image 
                             source={require('../../imgs/default_img.png')}                            
                             resizeMode={"contain"}
                             style={styles.icon}/>
-                        <Text style={styles.leftText}>{this.props.name}</Text>
+                        <Text style={styles.leftText}>{name}</Text>
                     </View>
                     <Image 
                         source={require('../../imgs/default_img.png')}                            
                         resizeMode={"contain"}
                         style={styles.backIcon}/>
-                </View>
+                </TouchableOpacity>
             </View>
         );
     }

@@ -18,6 +18,11 @@ import MineItemCell from './widget/MineItemCell';
  */
 export default class MinePage extends Component {
 
+    constructor(props) {
+        super(props)
+        this._itemClick = this._itemClick.bind(this);
+    }
+
     render() {
         return (
             <View style={styles.mainBox}> 
@@ -26,10 +31,15 @@ export default class MinePage extends Component {
                 <SafeAreaView style={{flex: 1}}>
                     <ScrollView >
                         <MineHeaderView/>
-                        <MineItemCell name={'功能'}/>
+                        <MineItemCell name={'功能'} onClickFun={this._itemClick}/>
+                        <MineItemCell name={'设置'} onClickFun={this._itemClick}/>
                     </ScrollView>
                 </SafeAreaView>
             </View>
         );
+    }
+
+    _itemClick(name) {
+        alert(name);
     }
 }
