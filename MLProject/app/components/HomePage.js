@@ -36,13 +36,11 @@ class HomePage extends Component {
         let {homeState} = this.props;
         let dataSource = homeState.homeModel;
         return (
-            <View style={styles.mainBox}> 
+            <SafeAreaView style={styles.mainBox}>
                 <StatusBar hidden={false} backgroundColor={Constant.primaryColor} translucent
-                            barStyle={'light-content'}/>
-                <SafeAreaView >
-                    <Text>{JSON.stringify(dataSource)}</Text>
-                </SafeAreaView>
-            </View>
+                        barStyle={'light-content'}/>
+                <Text>{JSON.stringify(dataSource)}</Text>
+            </SafeAreaView>
         );
     }
 

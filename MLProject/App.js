@@ -7,28 +7,24 @@
  */
 
 import React, {Component} from 'react';
-import {View} from 'react-native';
-import getRouter from './app/router';
 import {Provider} from 'react-redux'
 import store from './app/store'
+import MainNavigation from './app/MainNavigation';
+import MainBottomTab from './app/MainBottomTab'
 
 export default class App extends Component<{}> {
 
   constructor() {
     super();
     this.state = {
-        store: store,
-        show: true
+        store: store
     };
   }
 
   render() {
-    if (!this.state.show) {
-      return <View/>
-    }
     return (
       <Provider store={this.state.store}>
-        {getRouter()}
+        <MainNavigation/>
       </Provider>
     );
   }

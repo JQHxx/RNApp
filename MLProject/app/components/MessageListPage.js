@@ -16,13 +16,12 @@ export default class MessageListPage extends Component {
 
     render() {
         return (
-            <View style={styles.mainBox}> 
+
+            <SafeAreaView style={styles.mainBox}>
                 <StatusBar hidden={false} backgroundColor={Constant.primaryColor} translucent
-                            barStyle={'light-content'}/>
-                <SafeAreaView >
-                    <Text>消息中心</Text>
-                </SafeAreaView>
-            </View>
+                        barStyle={'light-content'}/>
+                <Text>消息中心</Text>
+            </SafeAreaView>
         );
     }
 }

@@ -2,7 +2,6 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableHighlight} from 'react-native';
-import {Actions} from 'react-native-router-flux';
 import HttpUtil from '../net/HttpUtil';
 import * as API from '../net/API'
 
@@ -20,7 +19,7 @@ export default class  WelcomePage extends React.Component {
         return (
           <View style={styles.container}>
             <TouchableHighlight onPress={() => {
-              Actions.reset("LoginPage");
+              
             }}>
               <Text style={styles.welcome}>Welcome!</Text>
             </TouchableHighlight>

@@ -20,10 +20,16 @@
 - GitHubPopular： https://github.com/crazycodeboy/GitHubPopular
 - GSYGithubAPP：https://github.com/CarGuo/GSYGithubAPP
 - 美团项目: https://www.jianshu.com/p/42097aa798fa
+- 识兔：https://github.com/CodeRabbitYu/ShiTu
 
 #### 主要模块
 - 底部导航：react-native-tab-navigator
 - 路由：react-native-router-flux 、react-navigation 需要依赖 react-native-gesture-handler
+```
+// 要先安装 react-native-gesture-handler 再安装react-navigation
+npm install react-native-gesture-handler@latest --save
+react-native link react-native-gesture-handler
+```
 - 数据库：react-native-sqlite-storage  、react-native-storage
 - 单向数据流：redux、redux-thunk、react-redux
 - CodePush
@@ -184,3 +190,4 @@ HttpUtil.post(url,formData,headers).then((json) => {
 ```
 
 #### 三、路由（react-native-router-flux）
+
