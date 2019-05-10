@@ -19,14 +19,14 @@
 #### 参考项目
 - GitHubPopular： https://github.com/crazycodeboy/GitHubPopular
 - GSYGithubAPP：https://github.com/CarGuo/GSYGithubAPP
+- 美团项目: https://www.jianshu.com/p/42097aa798fa
 
 #### 主要模块
 - 底部导航：react-native-tab-navigator
-- 路由：react-native-router-flux
+- 路由：react-native-router-flux 、react-navigation 需要依赖 react-native-gesture-handler
 - 数据库：react-native-sqlite-storage  、react-native-storage
 - 单向数据流：redux、redux-thunk、react-redux
 - CodePush
-- 导航：react-navigation 需要依赖 react-native-gesture-handler
 
 #### 第三方框架
 - 图片选择：react-native-image-picker、react-native-image-crop-picker
