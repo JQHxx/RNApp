@@ -1,13 +1,16 @@
+
 import React, {Component} from 'react'
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation'
 
-import TabIcon from './components/widget/TabIcon'
+import TabIcon from '../components/widget/TabIcon'
 
-import MessageListPage from './components/MessageListPage'
-import HomePage from './components/HomePage'
-import MinePage from './components/MinePage'
+import MessageListPage from '../components/MessageListPage'
+import HomePage from '../components/HomePage'
+import MinePage from '../components/MinePage'
 
-const BottomTabNavigator = createBottomTabNavigator(
+import {connect} from 'react-redux';
+
+const MyTab = createBottomTabNavigator(
     {
         Message: {
             screen: MessageListPage,
@@ -64,12 +67,13 @@ const BottomTabNavigator = createBottomTabNavigator(
         }
     }
 )
-const AppContainer = createAppContainer(BottomTabNavigator);
-
-export default class MainBottomTab extends Component {
+ 
+class DynamicTabNavigator extends Component {
     render() {
         return (
-            <AppContainer/>
-        );
+            <MyTab/>
+        )
     }
 }
+  
+  export default DynamicTabNavigator

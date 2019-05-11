@@ -21,6 +21,7 @@
 - GSYGithubAPP：https://github.com/CarGuo/GSYGithubAPP
 - 美团项目: https://www.jianshu.com/p/42097aa798fa
 - 识兔：https://github.com/CodeRabbitYu/ShiTu
+- RN导航栈: https://github.com/990094523/GitHub_RN
 
 #### 主要模块
 - 底部导航：react-native-tab-navigator

@@ -18,9 +18,7 @@ export default class  WelcomePage extends React.Component {
     render() {
         return (
           <View style={styles.container}>
-            <TouchableHighlight onPress={() => {
-              
-            }}>
+            <TouchableHighlight onPress={() => () => this.props.navigation.navigate('Details')}>
               <Text style={styles.welcome}>Welcome!</Text>
             </TouchableHighlight>
             
