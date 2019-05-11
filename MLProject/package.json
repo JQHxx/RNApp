@@ -8,22 +8,23 @@
     "bundle-ios": "node node_modules/react-native/local-cli/cli.js bundle --entry-file index.js  --platform ios --dev false --bundle-output ./ios/bundle/index.ios.jsbundle --assets-dest ./ios/bundle"
   },
   "dependencies": {
-    "react": "16.8.3",
-    "react-native": "0.59.8",
+    "prop-types": "15.6.2",
+    "react": "^16.8.6",
+    "react-native": "0.58.6",
     "react-native-gesture-handler": "^1.2.1",
     "react-native-root-toast": "^3.0.2",
-    "react-navigation": "^3.9.1",
-    "react-redux": "^7.0.3",
-    "redux": "^4.0.1",
+    "react-navigation": "3.9.1",
+    "react-redux": "5.1.0",
+    "redux": "4.0.1",
+    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "@babel/core": "7.4.4",
-    "@babel/runtime": "7.4.4",
-    "babel-jest": "24.8.0",
-    "jest": "24.8.0",
-    "metro-react-native-babel-preset": "0.54.0",
-    "react-test-renderer": "16.8.3"
+    "babel-jest": "19.0.0",
+    "babel-preset-react-native": "1.9.1",
+    "flow-bin": "^0.44.2",
+    "jest": "19.0.2",
+    "react-test-renderer": "~15.4.1"
   },
   "jest": {
     "preset": "react-native"
