@@ -46,3 +46,14 @@ export const minTextSize = 12;
 // tabBar 高度
 export const tabBarHeight = 49;
 export const tabIconSize = 20;
+
+export const normalIconSize = 40;
+export const bigIconSize = 50;
+export const largeIconSize = 80;
+export const smallIconSize = 30;
+export const minIconSize = 20;
+export const littleIconSize = 10;
+
+
+export const normalMarginEdge = 10;
+export const normalNumberOfLine = 4;

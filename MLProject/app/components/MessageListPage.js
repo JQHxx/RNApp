@@ -9,6 +9,8 @@ import {
 import styles from '../styles';
 import * as Constant from '../styles/constant';
 
+import PullListView from './widget/PullLoadMoreListView'
+
 /**
  *  消息中心
  */

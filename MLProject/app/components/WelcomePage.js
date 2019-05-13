@@ -14,6 +14,9 @@ export default class  WelcomePage extends React.Component {
 
     componentDidMount() {
         // this._testNetwork();
+        NavigationUtil.resetToHomePage({
+          navigation: this.props.navigation
+        });
     }
 
     render() {
