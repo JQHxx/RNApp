@@ -19,7 +19,7 @@ const MyTab = createBottomTabNavigator(
                 tabBarIcon:({focused}) => (
                     <TabIcon
                         focused={focused}
-                        title={'消息'}
+                        tabIconName={'消息'}
                     />
                 )
             }
@@ -31,7 +31,7 @@ const MyTab = createBottomTabNavigator(
                 tabBarIcon:({focused}) => (
                     <TabIcon
                         focused={focused}
-                        title={'c首页'}
+                        tabIconName={'首页'}
                     />
                 )
             }
@@ -43,7 +43,7 @@ const MyTab = createBottomTabNavigator(
                 tabBarIcon:({focused}) => (
                     <TabIcon
                         focused={focused}
-                        title={'我的'}
+                        tabIconName={'我的'}
                     />
                 )
             }
@@ -53,15 +53,17 @@ const MyTab = createBottomTabNavigator(
         initialRouteName: 'Home',
         order: ['Message', 'Home', 'Mine'],
         tabBarOptions: {
-            activeTintColor: 'white',
+            activeTintColor: '#3b5998',
+            inactiveTintColor: '#cccccc',
             activeBackgroundColor: 'white',
-            inactiveTintColor: 'red',
-            inactiveBackgroundColor: 'red',
+            inactiveBackgroundColor: 'white',
+            showLabel: true,
+            showIcon: true,
             style: {
-                backgroundColor: 'pink',
+                backgroundColor: 'white',
             },
             labelStyle: {
-                paddingBottom: 5,
+                paddingBottom: 3,
                 fontSize: 14,
             }
         }

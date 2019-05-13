@@ -22,8 +22,6 @@ const config = {
 
 const propTypes = {
     focused: PropTypes.bool,
-    title: PropTypes.string,
-    tabName: PropTypes.string,
     tabIconName: PropTypes.string,
 };
 
@@ -48,7 +46,6 @@ class TabIcon extends Component {
                         source={require('../../imgs/default_img.png')}                            
                         resizeMode={"contain"}
                         style={{width: Constant.tabIconSize, height: Constant.tabIconSize}}/>
-                    <Text style={[{color: color}, {fontSize: Constant.smallTextSize}, {marginTop: 5}]}>{this.props.title}</Text>
                 </View>
             );
         } else {
@@ -58,7 +55,6 @@ class TabIcon extends Component {
                         source={require('../../imgs/default_img.png')}                            
                         resizeMode={"contain"}
                         style={{width: Constant.tabIconSize, height: Constant.tabIconSize}}/>
-                    <Text style={[{color: color}, {fontSize: Constant.smallTextSize}, {marginTop: 5}]}>{this.props.title}</Text>
                 </View>
             );
         }
