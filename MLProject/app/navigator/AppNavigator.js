@@ -10,6 +10,7 @@ import LoginPage from '../components/LoginPage'
 import ServiceCenterPage from '../components/ServiceCenterPage'
 import WelcomePage from '../components/WelcomePage';
 import MainPage from '../components/MainPage';
+import HelpPage from '../components/HelpPage'
 
 
 const InitNavigator = createStackNavigator({
@@ -33,7 +34,10 @@ const InitNavigator = createStackNavigator({
     },
     Login: {
       screen: LoginPage
-    }
+    },
+    Help: {
+      screen: HelpPage
+    },
   });
 
   // react-navigation-redux-helpers 3.0 适配https://coding.imooc.com/learn/questiondetail/102354.html

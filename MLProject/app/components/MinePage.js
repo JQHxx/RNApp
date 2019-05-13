@@ -13,6 +13,8 @@ import * as Constant from '../styles/constant';
 import MineHeaderView from './widget/MineHeaderView';
 import MineItemCell from './widget/MineItemCell';
 
+import NavigationUtil from '../navigator/NavigationUtil'
+
 /**
  *  电商服务中心
  */
@@ -48,5 +50,11 @@ export default class MinePage extends Component {
 
     _itemClick(name) {
         alert(name);
+        switch (name) {
+            case '使用帮助':
+                NavigationUtil.goPage({url: 'https://www.bai.com'}, 'Help')
+            break
+            default: break
+        }
     }
 }

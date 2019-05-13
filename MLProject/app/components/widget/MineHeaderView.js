@@ -6,6 +6,17 @@ import {
     Text
 } from 'react-native'
 
+import PropTypes from 'prop-types';
+
+
+const defaultProps = {
+    userName: '',
+
+}
+
+const propTypes = {
+    userName: PropTypes.string,
+};
 
 export default class MineHeaderView extends Component {
 
@@ -14,6 +25,8 @@ export default class MineHeaderView extends Component {
     }
 
     render() {
+
+        let {userName} = this.props;
         return (
             <View style={styles.container}>
                 <View style={styles.content}>
@@ -21,7 +34,7 @@ export default class MineHeaderView extends Component {
                         source={require('../../imgs/default_img.png')}                            
                         resizeMode={"contain"}
                         style={styles.headImg}/>
-                    <Text>{this.props.userName}</Text>
+                    <Text>{userName}</Text>
                 </View>
             </View>
         );
