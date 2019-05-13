@@ -52,7 +52,7 @@ export default class MinePage extends Component {
         alert(name);
         switch (name) {
             case '使用帮助':
-                NavigationUtil.goPage({url: 'https://www.bai.com'}, 'Help')
+                NavigationUtil.goPage({url: 'https://www.baidu.com'}, 'Help')
             break
             default: break
         }

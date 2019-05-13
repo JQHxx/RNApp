@@ -33,10 +33,16 @@ const InitNavigator = createStackNavigator({
       screen: ServiceCenterPage
     },
     Login: {
-      screen: LoginPage
+      screen: LoginPage,
+      navigationOptions: {
+        header: null
+      }
     },
     Help: {
-      screen: HelpPage
+      screen: HelpPage,
+      navigationOptions: {
+        header: null
+      }
     },
   });
 
