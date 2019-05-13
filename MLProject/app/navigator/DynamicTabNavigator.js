@@ -53,7 +53,7 @@ const MyTab = createBottomTabNavigator(
         initialRouteName: 'Home',
         order: ['Message', 'Home', 'Mine'],
         tabBarOptions: {
-            activeTintColor: '#3b5998',
+            activeTintColor: '#333333',
             inactiveTintColor: '#cccccc',
             activeBackgroundColor: 'white',
             inactiveBackgroundColor: 'white',

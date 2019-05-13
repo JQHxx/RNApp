@@ -9,15 +9,19 @@ import {
 
 export default class MineHeaderView extends Component {
 
+    constructor(props) {
+        super(props)
+    }
+
     render() {
         return (
             <View style={styles.container}>
                 <View style={styles.content}>
                     <Image 
-                            source={require('../../imgs/default_img.png')}                            
-                            resizeMode={"contain"}
-                            style={styles.headImg}/>
-                    <Text>用户名</Text>
+                        source={require('../../imgs/default_img.png')}                            
+                        resizeMode={"contain"}
+                        style={styles.headImg}/>
+                    <Text>{this.props.userName}</Text>
                 </View>
             </View>
         );

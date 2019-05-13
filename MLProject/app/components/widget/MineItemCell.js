@@ -9,14 +9,18 @@ import {
 
 import PropTypes from 'prop-types';
 
-
 const defaultProps = {
-    name: ''
+    name: '',
+    lineHeight: 0,
+    lineBackgroundColor: 'white'
+
 }
 
 const propTypes = {
     name: PropTypes.string,
     iconName: PropTypes.string,
+    lineHeight: PropTypes.number,
+    lineBackgroundColor: PropTypes.string,
     onClickFun: PropTypes.func
 };
 
@@ -28,15 +32,15 @@ export default class MineItemCell extends Component {
 
     render() {
 
-        let {onClickFun, name} = this.props;
+        const {onClickFun, name, lineHeight, lineBackgroundColor} = this.props;
 
         return (
             <View style={styles.container}>
                 <TouchableOpacity
-                onPress={() => {
+                    onPress={() => {
                     onClickFun && onClickFun(name)
                 }}
-                style={styles.content}>
+                style={[styles.content, {borderBottomColor: lineBackgroundColor}, {borderBottomWidth: lineHeight}]}>
                     <View style={styles.leftContent}>
                         <Image 
                             source={require('../../imgs/default_img.png')}                            
@@ -58,7 +62,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         height: 44,
-        backgroundColor: '#4caf50',
+        backgroundColor: 'white',
     },
     content: {
         flex: 1,
@@ -72,7 +76,7 @@ const styles = StyleSheet.create({
         marginLeft: 12
     },
     leftText: {
-        color: '#ffffff',
+        color: '#333333',
         marginLeft: 5
     },
     icon: {
