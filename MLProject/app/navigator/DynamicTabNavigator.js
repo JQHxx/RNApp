@@ -67,11 +67,13 @@ const MyTab = createBottomTabNavigator(
         }
     }
 )
+
+const RootContent = createAppContainer(MyTab);
  
 class DynamicTabNavigator extends Component {
     render() {
         return (
-            <MyTab/>
+            <RootContent/>
         )
     }
 }

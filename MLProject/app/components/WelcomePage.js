@@ -4,6 +4,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableHighlight} from 'react-native';
 import HttpUtil from '../net/HttpUtil';
 import * as API from '../net/API'
+import NavigationUtil from '../navigator/NavigationUtil'
 
 
 /**
@@ -18,7 +19,11 @@ export default class  WelcomePage extends React.Component {
     render() {
         return (
           <View style={styles.container}>
-            <TouchableHighlight onPress={() => () => this.props.navigation.navigate('Details')}>
+            <TouchableHighlight onPress={() => {
+                    NavigationUtil.resetToHomePage({
+                      navigation: this.props.navigation
+                    });
+            }}>
               <Text style={styles.welcome}>Welcome!</Text>
             </TouchableHighlight>
             

@@ -30,14 +30,12 @@
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* MLProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MLProjectTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
-		6628C8AB2286A0A1000A363C /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		6628C8AD2286A715000A363C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6628C8AC2286A715000A363C /* UIKit.framework */; };
-		6628C8AF2286A813000A363C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6628C8AE2286A813000A363C /* Foundation.framework */; };
-		6628C8B12286A81B000A363C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6628C8B02286A81B000A363C /* CoreLocation.framework */; };
+		5EA5809D228914C300847503 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		5EA5809E228915FE00847503 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
+		5EA5809F22892B3A00847503 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F6CFE32285AB650074C2F5 /* libRNGestureHandler.a */; };
+		5EA580A022892C3800847503 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		66F6CF9F2285A1540074C2F5 /* index.ios.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 66F6CF9E2285A1530074C2F5 /* index.ios.jsbundle */; };
-		9FD47D3986E947E49420064B /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0091E51038C4CF783879034 /* libRNGestureHandler.a */; };
 		9FFAAD0D8FE94A20A11BB85C /* libRNGestureHandler-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 444874FA6E8747F087174895 /* libRNGestureHandler-tvOS.a */; };
-		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -381,16 +379,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6628C8B12286A81B000A363C /* CoreLocation.framework in Frameworks */,
-				6628C8AF2286A813000A363C /* Foundation.framework in Frameworks */,
-				6628C8AD2286A715000A363C /* UIKit.framework in Frameworks */,
-				6628C8AB2286A0A1000A363C /* libReact.a in Frameworks */,
-				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
+				5EA580A022892C3800847503 /* libRCTText.a in Frameworks */,
+				5EA5809F22892B3A00847503 /* libRNGestureHandler.a in Frameworks */,
+				5EA5809E228915FE00847503 /* JavaScriptCore.framework in Frameworks */,
+				5EA5809D228914C300847503 /* libReact.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				9FD47D3986E947E49420064B /* libRNGestureHandler.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

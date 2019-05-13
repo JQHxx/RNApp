@@ -2,10 +2,8 @@
 import React, { Component } from 'react'
 import {
     createStackNavigator,
-    createMaterialTopTabNavigator,
-    createBottomTabNavigator,
-    createSwitchNavigator,
-    createAppContainer
+    createAppContainer,
+    createSwitchNavigator
   } from 'react-navigation';
 
 import LoginPage from '../components/LoginPage'
@@ -13,7 +11,6 @@ import ServiceCenterPage from '../components/ServiceCenterPage'
 import WelcomePage from '../components/WelcomePage';
 import MainPage from '../components/MainPage';
 
-import {connect, Provider} from 'react-redux';
 
 const InitNavigator = createStackNavigator({
     WelcomePage: {
@@ -64,7 +61,21 @@ const InitNavigator = createStackNavigator({
   export default connect(mapStateToProps)(AppWithNavigationState);
   */
 
-  export default createAppContainer(RootNavigator)
+ export default APPContainer =  createAppContainer(RootNavigator);
+
+/*
+  class APP extends Component {
+    render() {
+      return (
+        <APPContainer/>
+      );
+    }
+  }
+
+  export default APP
+  */
+
+  
 
 
  
