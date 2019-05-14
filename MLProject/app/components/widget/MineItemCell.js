@@ -11,6 +11,7 @@ import PropTypes from 'prop-types';
 
 const defaultProps = {
     name: '',
+    rightText: '',
     lineHeight: 0,
     lineBackgroundColor: 'white'
 
@@ -18,6 +19,7 @@ const defaultProps = {
 
 const propTypes = {
     name: PropTypes.string,
+    rightText: PropTypes.string,
     iconName: PropTypes.string,
     lineHeight: PropTypes.number,
     lineBackgroundColor: PropTypes.string,
@@ -32,7 +34,7 @@ export default class MineItemCell extends Component {
 
     render() {
 
-        const {onClickFun, name, lineHeight, lineBackgroundColor} = this.props;
+        const {onClickFun, name, rightText, lineHeight, lineBackgroundColor} = this.props;
 
         return (
             <View style={styles.container}>
@@ -48,10 +50,14 @@ export default class MineItemCell extends Component {
                             style={styles.icon}/>
                         <Text style={styles.leftText}>{name}</Text>
                     </View>
-                    <Image 
-                        source={require('../../imgs/default_img.png')}                            
-                        resizeMode={"contain"}
-                        style={styles.backIcon}/>
+                    <View style={styles.rightContent}> 
+                        <Text style={styles.rightText}>{rightText}</Text>
+                        <Image 
+                            source={require('../../imgs/default_img.png')}                            
+                            resizeMode={"contain"}
+                            style={styles.backIcon}/>
+                    </View>
+   
                 </TouchableOpacity>
             </View>
         );
@@ -78,6 +84,15 @@ const styles = StyleSheet.create({
     leftText: {
         color: '#333333',
         marginLeft: 5
+    },
+    rightContent: {
+        alignItems: 'center',
+        flexDirection: 'row',
+        marginLeft: 12
+    },
+    rightText: {
+        color: '#333333',
+        marginRight: 5
     },
     icon: {
         width: 30,

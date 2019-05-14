@@ -3,7 +3,8 @@ import {
     View,
     StyleSheet,
     Image,
-    Text
+    Text,
+    TouchableOpacity
 } from 'react-native'
 
 import PropTypes from 'prop-types';
@@ -16,6 +17,7 @@ const defaultProps = {
 
 const propTypes = {
     userName: PropTypes.string,
+    onClickFun: PropTypes.func
 };
 
 export default class MineHeaderView extends Component {
@@ -26,9 +28,13 @@ export default class MineHeaderView extends Component {
 
     render() {
 
-        let {userName} = this.props;
+        let {userName, onClickFun} = this.props;
         return (
-            <View style={styles.container}>
+            <TouchableOpacity 
+                style={styles.container}
+                onPress={() => {
+                    onClickFun && onClickFun()
+                }}>
                 <View style={styles.content}>
                     <Image 
                         source={require('../../imgs/default_img.png')}                            
@@ -36,7 +42,7 @@ export default class MineHeaderView extends Component {
                         style={styles.headImg}/>
                     <Text>{userName}</Text>
                 </View>
-            </View>
+            </TouchableOpacity>
         );
     }
 

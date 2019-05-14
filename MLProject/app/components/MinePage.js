@@ -32,16 +32,49 @@ export default class MinePage extends Component {
                 <StatusBar hidden={false} backgroundColor={Constant.primaryColor} translucent
                         barStyle={'light-content'}/>
                 <ScrollView >
-                    <MineHeaderView userName={'用户名'}/>
-                    <MineItemCell name={'我的物流'} onClickFun={this._itemClick} lineHeight={0.5} lineBackgroundColor={'#dddddd'}/>
-                    <MineItemCell name={'我的账户'} onClickFun={this._itemClick} lineHeight={0.5} lineBackgroundColor={'#dddddd'}/>
-                    <MineItemCell name={'我的加盟'} onClickFun={this._itemClick} />
+                    <MineHeaderView 
+                        userName={'用户名'}
+                        onClickFun={() => {
+                            alert('头像点击')
+                        }}/>
+                    <MineItemCell 
+                        name={'我的物流'} 
+                        onClickFun={this._itemClick} 
+                        lineHeight={0.5} 
+                        lineBackgroundColor={'#dddddd'}/>
+                    <MineItemCell 
+                        name={'我的账户'} 
+                        onClickFun={this._itemClick} 
+                        lineHeight={0.5} 
+                        lineBackgroundColor={'#dddddd'}/>
+                    <MineItemCell 
+                        name={'我的加盟'} 
+                        onClickFun={this._itemClick} />
+
                     <View style={{height: 10, backgroundColor: '#dddddd'}}/>
-                    <MineItemCell name={'商城中心'} onClickFun={this._itemClick} lineHeight={0.5} lineBackgroundColor={'#dddddd'}/>
-                    <MineItemCell name={'分销商中心'} onClickFun={this._itemClick} lineHeight={0.5} lineBackgroundColor={'#dddddd'}/>
-                    <MineItemCell name={'清除缓存'} onClickFun={this._itemClick} lineHeight={0.5} lineBackgroundColor={'#dddddd'}/>
-                    <MineItemCell name={'使用帮助'} onClickFun={this._itemClick} />
+
+                    <MineItemCell 
+                        name={'商城中心'} 
+                        onClickFun={this._itemClick} 
+                        lineHeight={0.5} 
+                        lineBackgroundColor={'#dddddd'}/>
+                    <MineItemCell 
+                        name={'分销商中心'} 
+                        onClickFun={this._itemClick} 
+                        lineHeight={0.5} 
+                        lineBackgroundColor={'#dddddd'}/>
+                    <MineItemCell 
+                        name={'清除缓存'} 
+                        onClickFun={this._itemClick} 
+                        lineHeight={0.5} 
+                        lineBackgroundColor={'#dddddd'} 
+                        rightText={'0M'}/>
+                    <MineItemCell 
+                        name={'使用帮助'} 
+                        onClickFun={this._itemClick} />
+
                     <View style={{height: 10, backgroundColor: '#dddddd'}}/>
+
                     <MineItemCell name={'设置'} onClickFun={this._itemClick} />
     
                 </ScrollView>
