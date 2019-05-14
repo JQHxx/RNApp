@@ -54,6 +54,12 @@ react-native link react-native-gesture-handler
 #### 调试
 - 真机：react-native run-ios --device  手机的名称
 
+#### 错误整理
+```
+bundling failed: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    解决办法：重启电脑解决
+```
 
 #### 一、mac react-native环境搭建
 

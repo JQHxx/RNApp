@@ -35,8 +35,10 @@ const InitNavigator = createStackNavigator({
     Login: {
       screen: LoginPage,
       navigationOptions: {
-        header: null
-      }
+        header: null,
+        gesturesEnabled: false
+      },
+      mode: 'model'
     },
     Help: {
       screen: HelpPage,

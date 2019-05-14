@@ -49,10 +49,13 @@ export default class MinePage extends Component {
     }
 
     _itemClick(name) {
-        alert(name);
+        // alert(name);
         switch (name) {
             case '使用帮助':
                 NavigationUtil.goPage({url: 'https://www.baidu.com'}, 'Help')
+            break
+            case '我的物流':
+                NavigationUtil.goPage({}, 'Login')
             break
             default: break
         }
