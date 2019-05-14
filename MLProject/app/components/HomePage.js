@@ -14,6 +14,9 @@ import homeActions from '../store/actions/home'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 
+import SafeAreaViewPlus from './widget/SafeAreaViewPlus'
+import NavigationBar from './widget/NavigationBar'
+
 class HomePage extends Component {
 
     componentDidMount() {
@@ -36,11 +39,18 @@ class HomePage extends Component {
         let {homeState} = this.props;
         let dataSource = homeState.homeModel;
         return (
-            <SafeAreaView style={styles.mainBox}>
+            <SafeAreaViewPlus 
+            style={styles.mainBox}
+            topColor={Constant.primaryColor}
+            >
                 <StatusBar hidden={false} backgroundColor={Constant.primaryColor} translucent
                         barStyle={'light-content'}/>
+                <NavigationBar
+                    title={'首页'}
+                    style={{backgroundColor: Constant.primaryColor}}
+                />
                 <Text>{JSON.stringify(dataSource)}</Text>
-            </SafeAreaView>
+            </SafeAreaViewPlus>
         );
     }
 

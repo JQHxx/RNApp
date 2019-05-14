@@ -12,6 +12,9 @@ import * as Constant from '../styles/constant';
 import PullListView from './widget/PullLoadMoreListView'
 import MessageListCell from './widget/MessageListCell'
 
+import SafeAreaViewPlus from './widget/SafeAreaViewPlus'
+import NavigationBar from './widget/NavigationBar'
+
 /**
  *  消息中心
  */
@@ -43,9 +46,15 @@ export default class MessageListPage extends Component {
     render() {
         return (
 
-            <SafeAreaView style={styles.mainBox}>
+            <SafeAreaViewPlus 
+                style={styles.mainBox}
+                topColor={Constant.primaryColor}>
                 <StatusBar hidden={false} backgroundColor={Constant.primaryColor} translucent
                         barStyle={'light-content'}/>
+                <NavigationBar
+                    title={'消息'}
+                    style={{backgroundColor: Constant.primaryColor}}
+                />
                 <PullListView
                     style={{flex: 1}}
                     ref="pullList"
@@ -58,7 +67,7 @@ export default class MessageListPage extends Component {
                     dataSource={this.state.datas}
                     
                 />
-            </SafeAreaView>
+            </SafeAreaViewPlus>
         );
     }
 

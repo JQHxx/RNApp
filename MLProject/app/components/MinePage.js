@@ -14,6 +14,7 @@ import MineHeaderView from './widget/MineHeaderView';
 import MineItemCell from './widget/MineItemCell';
 
 import NavigationUtil from '../navigator/NavigationUtil'
+import SafeAreaViewPlus from './widget/SafeAreaViewPlus'
 
 /**
  *  电商服务中心
@@ -27,7 +28,7 @@ export default class MinePage extends Component {
 
     render() {
         return (
-            <SafeAreaView style={styles.mainBox}>
+            <View style={styles.mainBox}>
                 <StatusBar hidden={false} backgroundColor={Constant.primaryColor} translucent
                         barStyle={'light-content'}/>
                 <ScrollView >
@@ -44,7 +45,7 @@ export default class MinePage extends Component {
                     <MineItemCell name={'设置'} onClickFun={this._itemClick} />
     
                 </ScrollView>
-            </SafeAreaView>
+            </View>
         );
     }
 
