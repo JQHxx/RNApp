@@ -1,14 +1,16 @@
 
 import React, {Component} from 'react'
-import { createAppContainer, createBottomTabNavigator } from 'react-navigation'
+import { 
+    createAppContainer, 
+    createBottomTabNavigator ,
+    createStackNavigator
+} from 'react-navigation'
 
 import TabIcon from '../components/widget/TabIcon'
 
 import MessageListPage from '../components/MessageListPage'
 import HomePage from '../components/HomePage'
 import MinePage from '../components/MinePage'
-
-import {connect} from 'react-redux';
 
 const MyTab = createBottomTabNavigator(
     {

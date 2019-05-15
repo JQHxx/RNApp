@@ -3,14 +3,31 @@ import React, { Component } from 'react'
 import {
     createStackNavigator,
     createAppContainer,
-    createSwitchNavigator
+    createSwitchNavigator,
+    StackViewTransitionConfigs
   } from 'react-navigation';
+
+  import {Platform} from 'react-native';
 
 import LoginPage from '../components/LoginPage'
 import ServiceCenterPage from '../components/ServiceCenterPage'
 import WelcomePage from '../components/WelcomePage';
 import MainPage from '../components/MainPage';
 import HelpPage from '../components/HelpPage'
+
+// 单个页面配置model动画
+import StackViewStyleInterpolator from 'react-navigation-stack/dist/views/StackView/StackViewStyleInterpolator';
+
+const IOS_MODAL_ROUTES = ['Login'];
+
+const dynamicModalTransition = (transitionProps, prevTransitionProps) => {
+  const isModal = IOS_MODAL_ROUTES.some(
+    screenName =>
+      screenName === transitionProps.scene.route.routeName ||
+      (prevTransitionProps && screenName === prevTransitionProps.scene.route.routeName)
+  );
+  return StackViewTransitionConfigs.defaultTransitionConfig(transitionProps, prevTransitionProps, isModal);
+};
 
 
 const InitNavigator = createStackNavigator({
@@ -21,7 +38,7 @@ const InitNavigator = createStackNavigator({
       }
     }
   });
-  
+
   const MainNavigator = createStackNavigator({
     Main: {
       screen: MainPage,
@@ -29,16 +46,11 @@ const InitNavigator = createStackNavigator({
         header: null
       }
     },
-    ServiceCenter: {
-      screen: ServiceCenterPage
-    },
     Login: {
       screen: LoginPage,
       navigationOptions: {
-        header: null,
-        gesturesEnabled: false
-      },
-      mode: 'model'
+        header: null
+      }
     },
     Help: {
       screen: HelpPage,
@@ -46,11 +58,21 @@ const InitNavigator = createStackNavigator({
         header: null
       }
     },
+  }, {
+    transitionConfig: Platform.OS == 'ios'
+    ? dynamicModalTransition
+    : () => ({
+        screenInterpolator: StackViewStyleInterpolator.forHorizontal
+      }),
+    cardOverlayEnabled: true
   });
 
   // react-navigation-redux-helpers 3.0 适配https://coding.imooc.com/learn/questiondetail/102354.html
   // https://github.com/react-navigation/redux-helpers
 
+  /**
+   * 如果是需要登录才能进入app 在这里添加导航
+   */
   export const RootNavigator = createSwitchNavigator({
     Init: InitNavigator,
     Main: MainNavigator

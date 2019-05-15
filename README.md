@@ -22,10 +22,11 @@
 - 美团项目: https://www.jianshu.com/p/42097aa798fa
 - 识兔：https://github.com/CodeRabbitYu/ShiTu
 - RN导航栈: https://github.com/990094523/GitHub_RN
+- 商城App: https://github.com/duf1991/DYFBuyApp
 
 #### 主要模块
 - 底部导航：react-native-tab-navigator
-- 路由：react-native-router-flux 、react-navigation 需要依赖 react-native-gesture-handler
+- 路由：react-native-router-flux 、react-navigation 需要依赖 react-native-gesture-handler、react-router
 ```
 // 要先安装 react-native-gesture-handler 再安装react-navigation 需要RN 0.59的版本
 npm install react-native-gesture-handler@latest --save
@@ -35,7 +36,7 @@ react-native link react-native-gesture-handler
 - 单向数据流：redux、redux-thunk、react-redux
 - CodePush
 - 懒加载：react-lazyload
-
+- 样式：styled-components
 - 与原生交互
 - 封装原生控件
 - 原生项目集成RN
