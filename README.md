@@ -41,6 +41,7 @@ react-native link react-native-gesture-handler
 - 封装原生控件
 - 原生项目集成RN
 - 刘海屏手机适配
+- 页面间的互相传值：https://www.jianshu.com/p/4ae616bf922c
 
 #### 第三方框架
 - 图片选择：react-native-image-picker、react-native-image-crop-picker
@@ -56,7 +57,7 @@ react-native link react-native-gesture-handler
 - 下拉选择：https://github.com/alinz/react-native-dropdown
 - 获取设备信息：https://github.com/rebeccahughes/react-native-device-info
 - 通讯录：https://github.com/rt2zz/react-native-contacts
-- 国际化：https://github.com/joshswan/react-native-globalize
+- 国际化：https://github.com/joshswan/react-native-globalize、react-native-i18n
 - 扫码和本地图片识别 ：react-native-camera 、react-native-image-picker、 react-native-local-barcode-recognizer
 - 跑马灯：react-native-marquee-ab
 - 错误日志收集：react-native-bugly
