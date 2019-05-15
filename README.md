@@ -61,6 +61,7 @@ react-native link react-native-gesture-handler
 - 扫码和本地图片识别 ：react-native-camera 、react-native-image-picker、 react-native-local-barcode-recognizer
 - 跑马灯：react-native-marquee-ab
 - 错误日志收集：react-native-bugly
+- 防止页面崩溃：https://www.jianshu.com/p/61d09e488743  、componentDidCatch
 - 添加占位图：https://blog.csdn.net/handsome_926/article/details/81510682
 
 
