@@ -17,7 +17,8 @@ import {bindActionCreators} from 'redux'
 import SafeAreaViewPlus from './widget/SafeAreaViewPlus'
 import NavigationBar from './widget/NavigationBar'
 
-class HomePage extends Component {
+type Props = {};
+class HomePage extends Component<Props>  {
 
     componentDidMount() {
         this.loadListData();

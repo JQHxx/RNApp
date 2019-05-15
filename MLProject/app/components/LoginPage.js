@@ -24,8 +24,8 @@ import Toast from './common/ToastProxy'
 /**
  * 登录
  */
-
-class LoginPage extends Component {
+type Props = {};
+class LoginPage extends Component<Props>  {
 
     componentDidMount() {
         this.onOpen();

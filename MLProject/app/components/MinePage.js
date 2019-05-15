@@ -19,7 +19,8 @@ import SafeAreaViewPlus from './widget/SafeAreaViewPlus'
 /**
  *  电商服务中心
  */
-export default class MinePage extends Component {
+type Props = {};
+export default class MinePage extends Component<Props>  {
 
     constructor(props) {
         super(props)

@@ -27,13 +27,19 @@
 - 底部导航：react-native-tab-navigator
 - 路由：react-native-router-flux 、react-navigation 需要依赖 react-native-gesture-handler
 ```
-// 要先安装 react-native-gesture-handler 再安装react-navigation
+// 要先安装 react-native-gesture-handler 再安装react-navigation 需要RN 0.59的版本
 npm install react-native-gesture-handler@latest --save
 react-native link react-native-gesture-handler
 ```
 - 数据库：react-native-sqlite-storage  、react-native-storage
 - 单向数据流：redux、redux-thunk、react-redux
 - CodePush
+- 懒加载：react-lazyload
+
+- 与原生交互
+- 封装原生控件
+- 原生项目集成RN
+- 刘海屏手机适配
 
 #### 第三方框架
 - 图片选择：react-native-image-picker、react-native-image-crop-picker
@@ -50,6 +56,11 @@ react-native link react-native-gesture-handler
 - 获取设备信息：https://github.com/rebeccahughes/react-native-device-info
 - 通讯录：https://github.com/rt2zz/react-native-contacts
 - 国际化：https://github.com/joshswan/react-native-globalize
+- 扫码和本地图片识别 ：react-native-camera 、react-native-image-picker、 react-native-local-barcode-recognizer
+- 跑马灯：react-native-marquee-ab
+- 错误日志收集：react-native-bugly
+- 添加占位图：https://blog.csdn.net/handsome_926/article/details/81510682
+
 
 #### 调试
 - 真机：react-native run-ios --device  手机的名称

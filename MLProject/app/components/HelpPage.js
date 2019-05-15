@@ -15,7 +15,8 @@ import SafeAreaViewPlus from './widget/SafeAreaViewPlus'
 /**
  * 帮助
  */
-export default class HelpPage extends Component {
+type Props = {};
+export default class HelpPage extends Component<Props> {
 
     render() {
 

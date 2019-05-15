@@ -10,7 +10,8 @@ import NavigationUtil from '../navigator/NavigationUtil'
 /**
  * 欢迎页
  */
-export default class  WelcomePage extends React.Component {
+type Props = {};
+export default class  WelcomePage extends Component<Props>  {
 
     componentDidMount() {
         // this._testNetwork();

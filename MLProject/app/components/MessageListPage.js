@@ -18,7 +18,8 @@ import NavigationBar from './widget/NavigationBar'
 /**
  *  消息中心
  */
-export default class MessageListPage extends Component {
+type Props = {};
+export default class MessageListPage extends Component<Props>  {
 
 
     constructor(props) {

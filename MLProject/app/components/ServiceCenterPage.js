@@ -12,7 +12,8 @@ import * as Constant from '../styles/constant';
 /**
  *  电商服务中心
  */
-export default class ServiceCenterPage extends Component {
+type Props = {};
+export default class ServiceCenterPage extends Component<Props>  {
 
     render() {
         return (
