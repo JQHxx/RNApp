@@ -18,12 +18,15 @@ import NavigationUtil from '../navigator/NavigationUtil'
 import SafeAreaViewPlus from './widget/SafeAreaViewPlus'
 
 import ModalBox from 'react-native-modalbox'
-import CommonAlert from '../components/common/SystemAlert'
+import CommonAlert from '../components/common/CommonAlert'
+
+import HocErrorCatch from './common/WrappedComponent'
 
 /**
  *  电商服务中心
  */
 type Props = {};
+@HocErrorCatch
 export default class MinePage extends Component<Props>  {
 
     constructor(props) {
