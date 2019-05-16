@@ -18,7 +18,7 @@ import NavigationUtil from '../navigator/NavigationUtil'
 import SafeAreaViewPlus from './widget/SafeAreaViewPlus'
 
 import ModalBox from 'react-native-modalbox'
-import CommonAlert from '../components/common/CommonAlert'
+import CommonAlert from '../components/common/SystemAlert'
 
 /**
  *  电商服务中心
