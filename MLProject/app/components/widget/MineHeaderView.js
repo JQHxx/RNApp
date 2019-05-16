@@ -30,19 +30,20 @@ export default class MineHeaderView extends Component {
 
         let {userName, onClickFun} = this.props;
         return (
-            <TouchableOpacity 
-                style={styles.container}
-                onPress={() => {
-                    onClickFun && onClickFun()
-                }}>
-                <View style={styles.content}>
-                    <Image 
-                        source={require('../../imgs/default_img.png')}                            
-                        resizeMode={"contain"}
-                        style={styles.headImg}/>
-                    <Text>{userName}</Text>
-                </View>
-            </TouchableOpacity>
+            <View style={styles.container}>
+                <TouchableOpacity 
+                    onPress={() => {
+                        onClickFun && onClickFun()
+                    }}>
+                    <View style={styles.content}>
+                        <Image 
+                            source={require('../../imgs/default_img.png')}                            
+                            resizeMode={"contain"}
+                            style={styles.headImg}/>
+                        <Text>{userName}</Text>
+                    </View>
+                </TouchableOpacity>
+            </View>
         );
     }
 
@@ -52,7 +53,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         height: 180,
-        backgroundColor: '#f3f3f4'
+        backgroundColor: '#f3f3f4',
+        flexDirection: 'column',
+        alignItems: "center"
         
     },
     content: {

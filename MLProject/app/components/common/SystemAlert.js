@@ -3,17 +3,18 @@ import {
   StyleSheet, 
   Text, 
   View,
+  Modal,
   TouchableOpacity,
   Dimensions  
 } from 'react-native';
 
 import PropTypes from 'prop-types';
-import ModalBox from 'react-native-modalbox'
 
 let { width, height } = Dimensions.get('window');
 
-export default class CommonAlert extends Component {
-    //定义静态的属性，通过 this.props.alertTitle传值。
+// 只要为了解决可以遮盖顶部、顶部导航的问题
+export default class SystemAlert extends Component {
+
     static propTypes = {
         alertTitle: PropTypes.string,
         alertContent: PropTypes.string,
@@ -25,30 +26,30 @@ export default class CommonAlert extends Component {
 
     constructor(props) { 
         super(props);
-        this.hideAlertView = this.hideAlertView.bind(this)
         this.state = ({
             isShow: false,
+            animationType: 'fade', //none slide fade
             modalVisible: false, //模态场景是否可见
+            transparent: true, //是否透明显示
         })
     }
-  render() { 
-      if (!this.state.isShow) {
-          return null;
-      } else {
-          return (
-              <ModalBox
-                ref={'modal'}
-                animationDuration={0}
-                isOpen={this.state.isShow}
-                swipeToClose={false}
-                style={{backgroundColor:'transparent'}}>
-                  <View style={styles.container}>
-                      { this.renderAlertView()}
-                  </View>
-              </ModalBox>
-          );
-      }
-  }
+
+    render() { 
+        if (!this.state.isShow) {
+            return null;
+        } else {
+            return (
+                <Modal
+                animationType={this.state.animationType}
+                transparent={this.state.transparent}
+                visible={this.state.isShow}>
+                    <View style={styles.container}>
+                        {this.renderAlertView()}
+                    </View>
+                </Modal>
+            );
+        }
+    }
     
 
     //绘制 alert
@@ -56,38 +57,33 @@ export default class CommonAlert extends Component {
         return (
             <View style={styles.alertView}>
 
-                {/* 标题 */}
                 <View style={styles.titleContainer}>
                     <Text style={styles.title}>{this.props.alertTitle}</Text>
                 </View>
 
-                {/* 提示文字 */}
                 <View style={styles.contentContainer}>
                     <Text style={styles.content} numberOfLines={2}>{this.props.alertContent}</Text>
                 </View>
 
-                {/* 分割线 */}
                 <View style={styles.lineH} />
                 
-                {/* 按钮 */}
                 <View style={styles.btnContainer}>
                     <TouchableOpacity
                         style = {styles.btnStyle}
                         onPress={() => {
-                            this.hideAlertView()
+                            this.dissmissDialog(0);
+                            this.dissmissDialog();
                             this.props.comformClik ? this.props.comformClik() : null
-                        }}
-                    >
+                        }}>
                         <Text style={styles.btnText}>{this.props.ok}</Text>
                     </TouchableOpacity>
 
-                {/* 竖线 */}
                 <View style={styles.lineV}/>
-
                     <TouchableOpacity
                         style = {styles.btnStyle}
                         onPress={() => {
-                            this.hideAlertView()
+                            this.dissmissDialog(0);
+                            this.dissmissDialog();
                             this.props.cancelClick ? this.props.cancelClick() : null
                         }}>
                         <Text style={styles.btnText2}>{this.props.cancel}</Text>
@@ -111,7 +107,17 @@ export default class CommonAlert extends Component {
             isShow: true,
         })
     }
-            
+
+    //消失弹窗，最好delay0.3秒
+    dissmissDialog = (delay) => {
+        let duration = delay;
+        this.timer = setTimeout(() => {
+            this.setState({
+                isShow: false,
+            });
+            this.timer && clearTimeout(this.timer);
+        }, duration * 1000);
+    }  
 }
 
 const styles = StyleSheet.create({
@@ -144,7 +150,7 @@ const styles = StyleSheet.create({
     titleContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop:15,
+        marginTop: 15,
         marginLeft: 15,
         marginRight: 15,
         height: 30

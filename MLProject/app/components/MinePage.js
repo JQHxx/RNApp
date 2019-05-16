@@ -18,7 +18,7 @@ import NavigationUtil from '../navigator/NavigationUtil'
 import SafeAreaViewPlus from './widget/SafeAreaViewPlus'
 
 import ModalBox from 'react-native-modalbox'
-import CommonAlert from '../components/common/CommonAlert'
+import SystemAlert from '../components/common/SystemAlert'
 
 import HocErrorCatch from './common/WrappedComponent'
 
@@ -40,7 +40,7 @@ export default class MinePage extends Component<Props>  {
 
     _renderAndroidAlert() {
         return(
-          <CommonAlert
+          <SystemAlert
             ref='alert'
             ok={'确定'}
             cancel={'取消'}
