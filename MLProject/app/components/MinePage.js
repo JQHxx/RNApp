@@ -4,7 +4,8 @@ import {
     View,
     StatusBar,
     SafeAreaView,
-    ScrollView
+    ScrollView,
+    StyleSheet
 } from 'react-native'
 
 import styles from '../styles';
@@ -16,6 +17,9 @@ import MineItemCell from './widget/MineItemCell';
 import NavigationUtil from '../navigator/NavigationUtil'
 import SafeAreaViewPlus from './widget/SafeAreaViewPlus'
 
+import ModalBox from 'react-native-modalbox'
+import CommonAlert from '../components/common/CommonAlert'
+
 /**
  *  电商服务中心
  */
@@ -25,7 +29,26 @@ export default class MinePage extends Component<Props>  {
     constructor(props) {
         super(props)
         this._itemClick = this._itemClick.bind(this);
+        this._renderAndroidAlert = this._renderAndroidAlert.bind(this);
+        this.state = {
+            isOpen: false
+        }
     }
+
+    _renderAndroidAlert() {
+        return(
+          <CommonAlert
+            ref='alert'
+            ok={'确定'}
+            cancel={'取消'}
+            alertTitle={'删除提示'}
+            alertContent={'执行此操作后，将无法关注该联系人，请确认'}
+            comformClik={() => {
+
+            }}/>
+        );
+    
+      }
 
     render() {
         return (
@@ -79,8 +102,21 @@ export default class MinePage extends Component<Props>  {
                     <MineItemCell name={'设置'} onClickFun={this._itemClick} />
     
                 </ScrollView>
+
+                {this._renderAndroidAlert()}
+                <ModalBox
+                    isOpen={this.state.isOpen}
+                    ref={'clean'}
+                    position={"center"}
+                    style={styleg.modelContainer}
+                    >
+                    <View style={{backgroundColor: 'white'}}>
+                        <Text>1223333</Text>
+                    </View>
+                </ModalBox>
             </View>
         );
+        
     }
 
     _itemClick(name) {
@@ -90,9 +126,27 @@ export default class MinePage extends Component<Props>  {
                 NavigationUtil.goPage({url: 'https://www.baidu.com'}, 'Help')
             break
             case '我的物流':
-                NavigationUtil.goPage({}, 'Login')
+                /*
+                this.setState({
+                    isOpen: !this.state.isOpen
+                })
+                */
+                // NavigationUtil.goPage({}, 'CleanCache')
+                this.refs.alert && this.refs.alert.showDialog();
             break
             default: break
         }
     }
 }
+
+const styleg = StyleSheet.create({
+    modelContainer: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
+        backgroundColor: 'rgba(1, 1, 1, 0.5)',
+        zIndex: 99999999,
+    }
+})

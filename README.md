@@ -20,7 +20,7 @@
 - GitHubPopular： https://github.com/crazycodeboy/GitHubPopular
 - GSYGithubAPP：https://github.com/CarGuo/GSYGithubAPP
 - 美团项目: https://www.jianshu.com/p/42097aa798fa
-- 识兔：https://github.com/CodeRabbitYu/ShiTu
+- react hooks 识兔：https://github.com/CodeRabbitYu/ShiTu
 - RN导航栈: https://github.com/990094523/GitHub_RN
 - 商城App: https://github.com/duf1991/DYFBuyApp
 
@@ -33,8 +33,14 @@ npm install react-native-gesture-handler@latest --save
 react-native link react-native-gesture-handler
 ```
 - 数据库：react-native-sqlite-storage  、react-native-storage
-- 单向数据流：redux、redux-thunk、react-redux
-- CodePush
+- 单向数据流：redux、redux-thunk、react-redux、mobx
+- 更新：CodePush
+- 新特性：react-hooks https://blog.csdn.net/sinat_17775997/article/details/89214974
+https://blog.csdn.net/Lily_miao/article/details/86693556
+https://www.cnblogs.com/chenjg/p/10327304.html
+https://www.codercto.com/a/48216.html
+npm install easy-peasy （全局store）
+
 - 懒加载：react-lazyload
 - 样式：styled-components
 - 与原生交互
@@ -42,6 +48,7 @@ react-native link react-native-gesture-handler
 - 原生项目集成RN
 - 刘海屏手机适配
 - 页面间的互相传值：https://www.jianshu.com/p/4ae616bf922c
+- eslint
 
 #### 第三方框架
 - 图片选择：react-native-image-picker、react-native-image-crop-picker

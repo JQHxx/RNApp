@@ -10,15 +10,18 @@ import {
   import {Platform} from 'react-native';
 
 import LoginPage from '../components/LoginPage'
-import ServiceCenterPage from '../components/ServiceCenterPage'
+// import ServiceCenterPage from '../components/ServiceCenterPage'
 import WelcomePage from '../components/WelcomePage';
 import MainPage from '../components/MainPage';
 import HelpPage from '../components/HelpPage'
 
+// 弹窗
+import CleanCacheModal from '../components/CleanCacheModal'
+
 // 单个页面配置model动画
 import StackViewStyleInterpolator from 'react-navigation-stack/dist/views/StackView/StackViewStyleInterpolator';
 
-const IOS_MODAL_ROUTES = ['Login'];
+const IOS_MODAL_ROUTES = ['Login', 'CleanCache'];
 
 const dynamicModalTransition = (transitionProps, prevTransitionProps) => {
   const isModal = IOS_MODAL_ROUTES.some(
@@ -28,7 +31,6 @@ const dynamicModalTransition = (transitionProps, prevTransitionProps) => {
   );
   return StackViewTransitionConfigs.defaultTransitionConfig(transitionProps, prevTransitionProps, isModal);
 };
-
 
 const InitNavigator = createStackNavigator({
     WelcomePage: {
@@ -54,6 +56,12 @@ const InitNavigator = createStackNavigator({
     },
     Help: {
       screen: HelpPage,
+      navigationOptions: {
+        header: null
+      }
+    },
+    CleanCache: {
+      screen: CleanCacheModal,
       navigationOptions: {
         header: null
       }
@@ -86,7 +94,6 @@ const InitNavigator = createStackNavigator({
     state => state.nav,
     'root'
   );
-  
   
   const mapStateToProps = (state) => ({
     state: state.nav, // nav -> state
