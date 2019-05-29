@@ -75,6 +75,7 @@ npm install easy-peasy （全局store）
 #### 常用的实例
 - React Native实现京东下拉菜单：https://www.jianshu.com/p/718f9c886b68
 - React Navigation 导航栏样式调整+底部角标消息提示： https://www.jianshu.com/p/08018665b916
+- react native支持ES7中的修饰器语法@: https://www.jianshu.com/p/fc0084eb381b
 
 
 #### 调试
