@@ -72,6 +72,10 @@ npm install easy-peasy （全局store）
 
 - 添加占位图：https://blog.csdn.net/handsome_926/article/details/81510682
 
+#### 常用的实例
+- React Native实现京东下拉菜单：https://www.jianshu.com/p/718f9c886b68
+- React Navigation 导航栏样式调整+底部角标消息提示： https://www.jianshu.com/p/08018665b916
+
 
 #### 调试
 - 真机：react-native run-ios --device  手机的名称
