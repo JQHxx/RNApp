@@ -51,6 +51,7 @@ npm install easy-peasy （全局store）
 - eslint
 
 #### 第三方框架
+- 页面搭建框架：https://github.com/wix/react-native-ui-lib
 - 图片选择：react-native-image-picker、react-native-image-crop-picker
 - tab切换：react-native-scrollable-tab-view
 -  webView: react-native-htmlview
