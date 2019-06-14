@@ -26,6 +26,8 @@
 
 #### 主要模块
 - tab导航：https://www.cnblogs.com/MaiJiangDou/p/8336413.html
+- FlatList: 实现多种item https://www.jianshu.com/p/f2e3b707deb4
+- SectionList: 实现collectionView https://juejin.im/post/5cdea085e51d45107c773f25
 - 底部导航：react-native-tab-navigator
 - 路由：react-native-router-flux 、react-navigation 需要依赖 react-native-gesture-handler、react-router
 ```
