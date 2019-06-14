@@ -18,6 +18,7 @@ import NavigationUtil from '../navigator/NavigationUtil'
 import SafeAreaViewPlus from './widget/SafeAreaViewPlus'
 
 import ModalBox from 'react-native-modalbox'
+// 为了遮挡底部导航条，只能使用系统alert
 import SystemAlert from '../components/common/SystemAlert'
 
 import HocErrorCatch from './common/WrappedComponent'
@@ -44,9 +45,9 @@ export default class MinePage extends Component<Props>  {
             ref='alert'
             ok={'确定'}
             cancel={'取消'}
-            alertTitle={'删除提示'}
-            alertContent={'执行此操作后，将无法关注该联系人，请确认'}
-            comformClik={() => {
+            alertTitle={'提示'}
+            alertContent={'是否要清除缓存？'}
+            confirmClik={() => {
 
             }}/>
         );
@@ -129,7 +130,7 @@ export default class MinePage extends Component<Props>  {
                 NavigationUtil.goPage({url: 'https://www.baidu.com'}, 'Help')
             break
 
-            case '我的物流':
+            case '清除缓存':
                 /*
                 this.setState({
                     isOpen: !this.state.isOpen

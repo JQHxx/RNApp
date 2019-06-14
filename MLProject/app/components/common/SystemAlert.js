@@ -20,7 +20,7 @@ export default class SystemAlert extends Component {
         alertContent: PropTypes.string,
         cancel: PropTypes.string,
         ok: PropTypes.string,
-        comformClik: PropTypes.func,
+        confirmClik: PropTypes.func,
         cancelClick: PropTypes.func
     }
 
@@ -73,7 +73,7 @@ export default class SystemAlert extends Component {
                         onPress={() => {
                             this.dissmissDialog(0);
                             this.dissmissDialog();
-                            this.props.comformClik ? this.props.comformClik() : null
+                            this.props.comformClik ? this.props.confirmClik() : null
                         }}>
                         <Text style={styles.btnText}>{this.props.ok}</Text>
                     </TouchableOpacity>

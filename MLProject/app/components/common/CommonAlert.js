@@ -19,7 +19,7 @@ export default class CommonAlert extends Component {
         alertContent: PropTypes.string,
         cancel: PropTypes.string,
         ok: PropTypes.string,
-        comformClik: PropTypes.func,
+        confirmClik: PropTypes.func,
         cancelClick: PropTypes.func
     }
 
@@ -75,7 +75,7 @@ export default class CommonAlert extends Component {
                         style = {styles.btnStyle}
                         onPress={() => {
                             this.hideAlertView()
-                            this.props.comformClik ? this.props.comformClik() : null
+                            this.props.comformClik ? this.props.confirmClik() : null
                         }}
                     >
                         <Text style={styles.btnText}>{this.props.ok}</Text>

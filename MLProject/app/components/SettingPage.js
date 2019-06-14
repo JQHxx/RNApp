@@ -15,6 +15,8 @@ import ViewUtils from '../utils/ViewUtils'
 import styles from '../styles'
 import * as Constant from '../styles/constant'
 
+import SystemAlert from '../components/common/CommonAlert'
+
 /**
  * 设置页面
  */
@@ -25,6 +27,21 @@ export default class SettingPage extends Component {
         super(props)
         this._logoutAction = this._logoutAction.bind(this);
     }
+
+    _renderAndroidAlert() {
+        return(
+          <SystemAlert
+            ref='alert'
+            ok={'确定'}
+            cancel={'取消'}
+            alertTitle={'提示'}
+            alertContent={'是否退出登录？'}
+            confirmClik={() => {
+
+            }}/>
+        );
+    
+      }
 
     render() {
         return (
@@ -47,12 +64,13 @@ export default class SettingPage extends Component {
                 onPress={this._logoutAction}>
                     <Text style={{color:'#ffffff'}}>{'注销'}</Text>
                 </TouchableOpacity>
+                {this._renderAndroidAlert()}
             </SafeAreaViewPlus>
             
         );
     }
 
     _logoutAction() {
-     
+        this.refs.alert && this.refs.alert.showDialog();
     }
 }
