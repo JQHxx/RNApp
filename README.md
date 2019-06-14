@@ -25,6 +25,7 @@
 - 商城App: https://github.com/duf1991/DYFBuyApp
 
 #### 主要模块
+- tab导航：https://www.cnblogs.com/MaiJiangDou/p/8336413.html
 - 底部导航：react-native-tab-navigator
 - 路由：react-native-router-flux 、react-navigation 需要依赖 react-native-gesture-handler、react-router
 ```
