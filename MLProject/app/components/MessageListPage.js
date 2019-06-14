@@ -9,19 +9,81 @@ import {
 import styles from '../styles';
 import * as Constant from '../styles/constant';
 
+import PullListView from './widget/PullLoadMoreListView'
+import MessageListCell from './widget/MessageListCell'
+
+import SafeAreaViewPlus from './widget/SafeAreaViewPlus'
+import NavigationBar from './widget/NavigationBar'
+
 /**
  *  消息中心
  */
-export default class MessageListPage extends Component {
+type Props = {};
+export default class MessageListPage extends Component<Props>  {
+
+
+    constructor(props) {
+        super(props)
+        this._refresh = this._refresh.bind(this)
+        this._loadMore = this._loadMore.bind(this)
+
+        this.state = {
+            datas: []
+        }
+    }
+
+    _renderRow(rowData, rowID) {
+        return (
+            <MessageListCell/>
+        )
+    }
+
+    componentDidMount() {
+        this.setState({
+            datas: [1, 2, 3]
+        })
+    }
 
     render() {
         return (
 
-            <SafeAreaView style={styles.mainBox}>
+            <SafeAreaViewPlus 
+                style={styles.mainBox}
+                topColor={Constant.primaryColor}>
                 <StatusBar hidden={false} backgroundColor={Constant.primaryColor} translucent
                         barStyle={'light-content'}/>
-                <Text>消息中心</Text>
-            </SafeAreaView>
+                <NavigationBar
+                    title={'消息'}
+                    style={{backgroundColor: Constant.primaryColor}}
+                />
+                <PullListView
+                    style={{flex: 1}}
+                    ref="pullList"
+                    enableRefresh={false}
+                    renderRow={(rowData, index) =>
+                        this._renderRow(rowData, index)
+                    }
+                    refresh={this._refresh}
+                    loadMore={this._loadMore}
+                    dataSource={this.state.datas}
+                    
+                />
+            </SafeAreaViewPlus>
         );
     }
+
+    _refresh() {
+        let size = 0;
+        if (this.refs.pullList) {
+            this.refs.pullList.refreshComplete((size >= 15));
+        }
+    }
+
+    _loadMore() {
+        let size = 0;
+        if (this.refs.pullList) {
+            this.refs.pullList.loadMoreComplete((size >= 15));
+        }
+    }
+
 }

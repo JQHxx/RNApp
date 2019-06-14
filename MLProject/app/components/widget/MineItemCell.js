@@ -9,14 +9,20 @@ import {
 
 import PropTypes from 'prop-types';
 
-
 const defaultProps = {
-    name: ''
+    name: '',
+    rightText: '',
+    lineHeight: 0,
+    lineBackgroundColor: 'white'
+
 }
 
 const propTypes = {
     name: PropTypes.string,
+    rightText: PropTypes.string,
     iconName: PropTypes.string,
+    lineHeight: PropTypes.number,
+    lineBackgroundColor: PropTypes.string,
     onClickFun: PropTypes.func
 };
 
@@ -28,15 +34,15 @@ export default class MineItemCell extends Component {
 
     render() {
 
-        let {onClickFun, name} = this.props;
+        const {onClickFun, name, rightText, lineHeight, lineBackgroundColor} = this.props;
 
         return (
             <View style={styles.container}>
                 <TouchableOpacity
-                onPress={() => {
+                    onPress={() => {
                     onClickFun && onClickFun(name)
                 }}
-                style={styles.content}>
+                style={[styles.content, {borderBottomColor: lineBackgroundColor}, {borderBottomWidth: lineHeight}]}>
                     <View style={styles.leftContent}>
                         <Image 
                             source={require('../../imgs/default_img.png')}                            
@@ -44,10 +50,14 @@ export default class MineItemCell extends Component {
                             style={styles.icon}/>
                         <Text style={styles.leftText}>{name}</Text>
                     </View>
-                    <Image 
-                        source={require('../../imgs/default_img.png')}                            
-                        resizeMode={"contain"}
-                        style={styles.backIcon}/>
+                    <View style={styles.rightContent}> 
+                        <Text style={styles.rightText}>{rightText}</Text>
+                        <Image 
+                            source={require('../../imgs/default_img.png')}                            
+                            resizeMode={"contain"}
+                            style={styles.backIcon}/>
+                    </View>
+   
                 </TouchableOpacity>
             </View>
         );
@@ -58,7 +68,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         height: 44,
-        backgroundColor: '#4caf50',
+        backgroundColor: 'white',
     },
     content: {
         flex: 1,
@@ -72,8 +82,17 @@ const styles = StyleSheet.create({
         marginLeft: 12
     },
     leftText: {
-        color: '#ffffff',
+        color: '#333333',
         marginLeft: 5
+    },
+    rightContent: {
+        alignItems: 'center',
+        flexDirection: 'row',
+        marginLeft: 12
+    },
+    rightText: {
+        color: '#333333',
+        marginRight: 5
     },
     icon: {
         width: 30,

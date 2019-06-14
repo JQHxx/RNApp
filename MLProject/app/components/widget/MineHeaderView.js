@@ -3,22 +3,46 @@ import {
     View,
     StyleSheet,
     Image,
-    Text
+    Text,
+    TouchableOpacity
 } from 'react-native'
 
+import PropTypes from 'prop-types';
+
+
+const defaultProps = {
+    userName: '',
+
+}
+
+const propTypes = {
+    userName: PropTypes.string,
+    onClickFun: PropTypes.func
+};
 
 export default class MineHeaderView extends Component {
 
+    constructor(props) {
+        super(props)
+    }
+
     render() {
+
+        let {userName, onClickFun} = this.props;
         return (
             <View style={styles.container}>
-                <View style={styles.content}>
-                    <Image 
+                <TouchableOpacity 
+                    onPress={() => {
+                        onClickFun && onClickFun()
+                    }}>
+                    <View style={styles.content}>
+                        <Image 
                             source={require('../../imgs/default_img.png')}                            
                             resizeMode={"contain"}
                             style={styles.headImg}/>
-                    <Text>用户名</Text>
-                </View>
+                        <Text>{userName}</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -29,7 +53,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         height: 180,
-        backgroundColor: '#f3f3f4'
+        backgroundColor: '#f3f3f4',
+        flexDirection: 'column',
+        alignItems: "center"
         
     },
     content: {

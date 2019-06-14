@@ -16,14 +16,16 @@ import loginActions from '../store/actions/login'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 
+import NavigationUtil from '../navigator/NavigationUtil'
+
 // 吐丝
 import Toast from './common/ToastProxy'
 
 /**
  * 登录
  */
-
-class LoginPage extends Component {
+type Props = {};
+class LoginPage extends Component<Props>  {
 
     componentDidMount() {
         this.onOpen();
@@ -83,6 +85,9 @@ class LoginPage extends Component {
       * 登录
       */
      doLogin () {
+
+        NavigationUtil.goBack(this.props.navigation);
+        return;
         let {loginAction} = this.props;
         if (!this.params.userName || this.params.userName.length === 0) {
             return
