@@ -13,7 +13,8 @@ import LoginPage from '../components/LoginPage'
 // import ServiceCenterPage from '../components/ServiceCenterPage'
 import WelcomePage from '../components/WelcomePage';
 import MainPage from '../components/MainPage';
-import HelpPage from '../components/HelpPage'
+import HelpPage from '../components/HelpPage';
+import SettingPage from '../components/SettingPage';
 
 // 弹窗
 import CleanCacheModal from '../components/CleanCacheModal'
@@ -66,6 +67,12 @@ const InitNavigator = createStackNavigator({
         header: null
       }
     },
+    Setting: {
+      screen: SettingPage,
+      navigationOptions: {
+        header: null
+      }
+    }
   }, {
     transitionConfig: Platform.OS == 'ios'
     ? dynamicModalTransition

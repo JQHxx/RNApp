@@ -128,6 +128,7 @@ export default class MinePage extends Component<Props>  {
             case '使用帮助':
                 NavigationUtil.goPage({url: 'https://www.baidu.com'}, 'Help')
             break
+
             case '我的物流':
                 /*
                 this.setState({
@@ -136,6 +137,10 @@ export default class MinePage extends Component<Props>  {
                 */
                 // NavigationUtil.goPage({}, 'CleanCache')
                 this.refs.alert && this.refs.alert.showDialog();
+            break
+
+            case '设置': 
+                NavigationUtil.goPage({}, 'Setting')
             break
             default: break
         }
