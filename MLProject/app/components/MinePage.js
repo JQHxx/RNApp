@@ -71,6 +71,11 @@ export default class MinePage extends Component<Props>  {
                         lineHeight={0.5} 
                         lineBackgroundColor={'#dddddd'}/>
                     <MineItemCell 
+                        name={'我的课程'} 
+                        onClickFun={this._itemClick} 
+                        lineHeight={0.5} 
+                        lineBackgroundColor={'#dddddd'}/>
+                    <MineItemCell 
                         name={'我的账户'} 
                         onClickFun={this._itemClick} 
                         lineHeight={0.5} 
@@ -128,6 +133,11 @@ export default class MinePage extends Component<Props>  {
         switch (name) {
             case '使用帮助':
                 NavigationUtil.goPage({url: 'https://www.baidu.com'}, 'Help')
+            break
+
+            case '我的课程': 
+            
+            NavigationUtil.goPage({}, 'MyCourse');
             break
 
             case '清除缓存':

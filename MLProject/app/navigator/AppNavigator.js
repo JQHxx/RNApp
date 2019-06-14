@@ -15,6 +15,7 @@ import WelcomePage from '../components/WelcomePage';
 import MainPage from '../components/MainPage';
 import HelpPage from '../components/HelpPage';
 import SettingPage from '../components/SettingPage';
+import MyCoursePage from '../components/MyCoursePage';
 
 // 弹窗
 import CleanCacheModal from '../components/CleanCacheModal'
@@ -69,6 +70,12 @@ const InitNavigator = createStackNavigator({
     },
     Setting: {
       screen: SettingPage,
+      navigationOptions: {
+        header: null
+      }
+    },
+    MyCourse: {
+      screen: MyCoursePage,
       navigationOptions: {
         header: null
       }

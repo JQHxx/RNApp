@@ -47,8 +47,7 @@ export default class SettingPage extends Component {
         return (
             <SafeAreaViewPlus 
             style={styles.mainBox}
-            topColor={Constant.primaryColor}
-            >
+            topColor={Constant.primaryColor}>
                 <StatusBar hidden={false} backgroundColor={Constant.primaryColor} translucent
                         barStyle={'light-content'}/>
                 <NavigationBar

@@ -16,6 +16,7 @@
     "react-native-htmlview": "^0.14.0",
     "react-native-modalbox": "^1.7.1",
     "react-native-root-toast": "^3.0.2",
+    "react-native-scrollable-tab-view": "^0.10.0",
     "react-native-swiper": "^1.5.14",
     "react-native-webview": "^5.8.2",
     "react-navigation": "^3.9.1",
