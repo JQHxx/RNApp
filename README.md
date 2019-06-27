@@ -184,3 +184,6 @@ HttpUtil.post(url,formData,headers).then((json) => {
 ```
 
 #### 三、路由（react-native-router-flux）
+
+#### 四、第三方sdk
+- 1、友盟分享：https://www.jianshu.com/p/97da7b3b28d2
