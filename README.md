@@ -24,6 +24,7 @@
 - RN导航栈: https://github.com/990094523/GitHub_RN
 - 商城App: https://github.com/duf1991/DYFBuyApp
 - 百思不得姐：https://github.com/spicyShrimp/Misses、https://github.com/HuPingKang/BSBDJDemo
+- bilibili: https://github.com/HuPingKang/BSBDJDemo
 
 #### 主要模块
 - tab导航：https://www.cnblogs.com/MaiJiangDou/p/8336413.html
