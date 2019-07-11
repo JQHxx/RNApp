@@ -231,3 +231,9 @@ HttpUtil.post(url,formData,headers).then((json) => {
 
 #### 三、路由（react-native-router-flux）
 
+#### 四、封装Native组件
+- 1、https://www.cnblogs.com/ChrisZhou666/p/8279188.html
+- 2、https://www.jianshu.com/p/f236928162f4
+- 3、原生调用js: https://www.jianshu.com/p/f06ff93b1125
+- 4、js调用iOS: https://www.jianshu.com/p/e4359c224f09
+
