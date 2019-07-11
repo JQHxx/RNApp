@@ -17,6 +17,9 @@
 ```
 二、Android
 - https://www.cnblogs.com/wyy5552/p/7282655.html
+```
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
+```
 
 #### 参考项目
 - GitHubPopular： https://github.com/crazycodeboy/GitHubPopular
