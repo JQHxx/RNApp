@@ -15,6 +15,8 @@
 第四步： 将 bundle 目录下包拖工程即可
 
 ```
+二、Android
+- https://www.cnblogs.com/wyy5552/p/7282655.html
 
 #### 参考项目
 - GitHubPopular： https://github.com/crazycodeboy/GitHubPopular
