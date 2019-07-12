@@ -187,3 +187,6 @@ HttpUtil.post(url,formData,headers).then((json) => {
 
 #### 四、第三方sdk
 - 1、友盟分享：https://www.jianshu.com/p/97da7b3b28d2
+
+#### 五、图片的引用方式 （三种：使用原生、使用js工程、使用网络图片）
+- https://blog.csdn.net/hejiasu/article/details/78970251
