@@ -242,3 +242,7 @@ HttpUtil.post(url,formData,headers).then((json) => {
 - 3、原生调用js: https://www.jianshu.com/p/f06ff93b1125
 - 4、js调用iOS: https://www.jianshu.com/p/e4359c224f09
 
+#### 五、UI组件库
+- react-native-elements 关注度高
+- react-native-ui-lib 最大的优点，就是额外提供了View、Text、Button等基础组件的便捷布局能力
+
